@@ -1,0 +1,18 @@
+﻿@model AspnetCoreMert.EmployeeAddViewModel;
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form asp-controller="Employee" asp-action="Add">
+    <label asp-for="Employee.Id"></label><input asp-for="Employee.Id"/><br/>
+    <label asp-for="Employee.FirstName"></label><input asp-for="Employee.FirstName"/><br/>
+    <label asp-for="Employee.LastName"></label><input asp-for="Employee.LastName"/><br/>
+    <label asp-for="Employee.CityId"></label><select asp-for="Employee.CityId" asp-items="Model.Cities"></select><br/>
+    <button type="submit" value="Search">Add</button>
+</form>
+<employee-list count="2" ></employee-list><br/>
+<employe2-list2></employe2-list2>
+<employee-m1 count="3"></employee-m1>
+@section EmployeeSection{
+    Some Content
+}
