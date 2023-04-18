@@ -1,0 +1,42 @@
+﻿@page
+@model AspnetCoreMert.Pages.Studentp.IndexModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<br/>
+<h1>Our Big Family</h1>
+<br/>
+<table>
+    <thead>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    </thead>
+    
+    <tbody>
+    
+    @foreach (var students in Model.Students)
+    {
+        <tr>
+            <td>@students.Id</td>
+            <td>@students.FirstName</td>
+            <td>@students.LastName</td>
+            <td>@students.Email</td>
+        </tr>
+    }
+
+    </tbody>
+
+</table>
+<br/>
+
+<form method="post">
+First Name:<input asp-for="Student.FirstName"/><br/>
+Last Name:<input asp-for="Student.LastName"/><br/>
+Email:<input asp-for="Student.Email"/><br/>
+<input type="submit"/>
+</form>
+<br/>
+

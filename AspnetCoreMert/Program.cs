@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<ICalculator, Calculator18>();
-var connection = @"Server=(localdb)\MSSQLLocalDB;Database=SchoolDb;";
+builder.Services.AddSingleton<ICalculator, Calculator18>();
+var connection = @"server=(localdb)\MSSQLLocalDB;Database=SchoolDb;integrated security=true;";
 builder.Services.AddDbContext<SchoolContext>(options => options.UseSqlServer(connection));
 
 
@@ -24,5 +24,4 @@ void configureRoutes(IRouteBuilder routeBuilder)
     routeBuilder.MapRoute("MyRoute", "Mert/{Controller=home}/{action=index3}/{id?}");
 
 }
-
 app.Run();
